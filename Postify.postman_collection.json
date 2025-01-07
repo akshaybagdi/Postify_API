@@ -1,0 +1,542 @@
+{
+	"info": {
+		"_postman_id": "97c07b20-b0fe-4b09-aad7-cb8ae37e217f",
+		"name": "Postify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40011168"
+	},
+	"item": [
+		{
+			"name": "Post_List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Postify_Acc_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{APIURL_Constant}}/api/posts/list/",
+					"host": [
+						"{{APIURL_Constant}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"list",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post_ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Postify_Acc_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APIURL_Constant}}/api/posts/id/",
+					"host": [
+						"{{APIURL_Constant}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"id",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post_Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Postify_Acc_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"create using postmaan\",\r\n    \"content\": \"content2\",\r\n    \"author\":\"akshay\",\r\n    \"category\": \"REVIEW\",\r\n    \"is_published\": true,\r\n    \"rating\": \"2.50\",\r\n    \"website\": \"http://google.com\",\r\n    \"tags\": [\r\n        {\r\n            \"name\": \"#LiveLong\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APIURL_Constant}}/api/posts/create/",
+					"host": [
+						"{{APIURL_Constant}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post_Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Postify_Acc_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": 2,\r\n        \"title\": \"title2\",\r\n        \"content\": \"content2\",\r\n        \"author\":\"akshay\",\r\n        \"category\": \"REVIEW\",\r\n        \"is_published\": true,\r\n        \"rating\": \"2.50\",\r\n        \"website\": \"http://google.com\",\r\n        \"tags\": [\r\n            {\r\n                \"name\": \"Blog\"\r\n            }\r\n        ]\r\n \r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APIURL_Constant}}/api/posts/update/",
+					"host": [
+						"{{APIURL_Constant}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post_Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Postify_Acc_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": 6\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APIURL_Constant}}/api/posts/delete/",
+					"host": [
+						"{{APIURL_Constant}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like&Unlike_Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Postify_Acc_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"post_id\":53\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APIURL_Constant}}/api/unlike/",
+					"host": [
+						"{{APIURL_Constant}}"
+					],
+					"path": [
+						"api",
+						"unlike",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reg_Acc",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"username\": \"djanouser\",\r\n    \"password\": \"djangouser\", \r\n    \"email\": \"djangouser@email.com\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APIURL_Constant}}/api/account/register/",
+					"host": [
+						"{{APIURL_Constant}}"
+					],
+					"path": [
+						"api",
+						"account",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login_Acc",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"username\": \"anuj\",\r\n    \"password\": \"djangouser\", \r\n    \"email\": \"anuj @email.com\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APIURL_Constant}}/api/account/login/",
+					"host": [
+						"{{APIURL_Constant}}"
+					],
+					"path": [
+						"api",
+						"account",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LogOut_Acc",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczNDU4MDMyMywiaWF0IjoxNzM0NDkzOTIzLCJqdGkiOiJmNWYyMTQ3MjdlNGQ0Y2ZhODVjZDk2NWUzM2JhYjkwZCIsInVzZXJfaWQiOjN9.Ji9KL_w6LJDbgcrHmZbk6Ed4hzbZ-nitCNqyeizy1jo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APIURL_Constant}}/api/account/logout/",
+					"host": [
+						"{{APIURL_Constant}}"
+					],
+					"path": [
+						"api",
+						"account",
+						"logout",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comment_List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Postify_Acc_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APIURL_Constant}}/api/comments/list/",
+					"host": [
+						"{{APIURL_Constant}}"
+					],
+					"path": [
+						"api",
+						"comments",
+						"list",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comment_Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Postify_Acc_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":5,\r\n    \"content\": \"akshay id 33\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APIURL_Constant}}/api/comments/update/",
+					"host": [
+						"{{APIURL_Constant}}"
+					],
+					"path": [
+						"api",
+						"comments",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comment_Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Postify_Acc_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":2\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APIURL_Constant}}/api/comments/delete/",
+					"host": [
+						"{{APIURL_Constant}}"
+					],
+					"path": [
+						"api",
+						"comments",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comment_Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Postify_Acc_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"content\": \"Nice Posts\",\r\n  \"post_id\": 1\r\n\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APIURL_Constant}}/api/comments/create/",
+					"host": [
+						"{{APIURL_Constant}}"
+					],
+					"path": [
+						"api",
+						"comments",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tag",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Postify_Acc_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "//  for mutlie tag use this url /api/posts/tag/?tags=LiveLong&tags=Blog\r\n//  for single tag use this url /api/posts/tag/LiveLong/",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{APIURL_Constant}}/api/posts/tag/LiveLong/",
+					"host": [
+						"{{APIURL_Constant}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"tag",
+						"LiveLong",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
